@@ -1,6 +1,8 @@
+let hoverColor = 'black';
+
 function createGrid(size) {
     const grid = document.getElementById('grid');
-    const squareSize = 100 / size; // Adjust this to set the size of each square
+    const squareSize = 100 / size;
 
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
@@ -15,13 +17,18 @@ function createGrid(size) {
 }
 
 function mouseOverGrid(event) {
-    event.target.style.background = 'green';
+    if (hoverColor === 'rgb') {
+        event.target.style.backgroundColor = getRandomColor();
+    } else {
+        event.target.style.backgroundColor = hoverColor;
+    }
 }
+
 
 function newGridSize() {
     const grid = document.getElementById('grid');
     grid.innerHTML = '';
-
+    hoverColor = 'black';
     let userSize = prompt('Enter the size for the new grid (e.g., Enter 16 for a 16x16 grid (MAXIMUM 100)):');
 
     if (userSize <= 0 || userSize > 100 || isNaN(userSize)) {
@@ -32,4 +39,32 @@ function newGridSize() {
     }
 }
 
+function changeColorToBlack() {
+    hoverColor = 'black';
+}
+
+function changeColorToWhite() {
+    hoverColor = 'white';
+}
+
+function changeColorToGrey() {
+    hoverColor = 'grey';
+}
+
+function changeColorToRgb() {
+
+}
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function changeColorToRgb() {
+    hoverColor = 'rgb';
+}
 createGrid();

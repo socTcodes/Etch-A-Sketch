@@ -8,7 +8,30 @@
     <script src="index.js" defer></script>
 </head>
 <body>
-    <button id="changeGridSizeBtn" onclick="newGridSize()">New Grid Size</button>
-    <div id="grid"></div>
+    <div class="container">
+        <h1 class="title">Etch-A-Sketch</h1>
+        <div class="content-container">
+            <div class="content">
+                <div class="menu">
+                    <button id="changeGridSizeBtn" onclick="newGridSize()">New Grid Size</button>
+                    <button id="changeColorRgb" onclick="changeColorToRgb()">Rgb</button>
+                    <button id="changeColorBlack" onclick="changeColorToBlack()">Black</button>
+                    <button id="changeColorWhite" onclick="changeColorToWhite()">White</button>
+                    <button id="changeColorGrey" onclick="changeColorToGrey()">Grey</button>
+                </div>
+                <div id="grid"></div>
+            </div>
+            <h2 class="info">Select a grid size then choose your color!</h2>
+            <div class="socTcodes">
+                <h3>socTcodes 2023</h3>
+                <a href="https://www.instagram.com/soctcodes" target="_blank">
+                    <img src="insta.png" alt="instagram logo">
+                </a> 
+                <a href="https://github.com/socTcodes?tab=repositories" target="_blank">
+                    <img src="github.png" alt="github logo">
+                </a>   
+            </div>
+        </div>
+    </div>
 </body>
 </html>
